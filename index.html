@@ -9,9 +9,10 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Jahmare Medina | Frontend Developer">
     <meta property="og:description" content="Explore the personal portfolio of Jahmare Medina, a passionate frontend developer">
-    <meta property="og:image" content="path_to_image.jpg"> <!-- Change this to a valid image path -->
+    <meta property="og:image" content="path_to_image.jpg">
     <title>Jahmare Medina | Frontend Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Global Styles */
         :root {
@@ -22,6 +23,8 @@
             --dark-text: #ddd;
             --light-bg: #f5f5f5;
             --light-text: #333;
+            --border-radius: 8px;
+            --transition-duration: 0.3s;
         }
 
         body {
@@ -37,23 +40,22 @@
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 120px 20px;
+            padding: 80px 20px;
             text-align: center;
             border-bottom-left-radius: 50% 30%;
             border-bottom-right-radius: 50% 30%;
-            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
-            transition: background 0.4s ease;
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 700;
             margin: 0;
             text-transform: uppercase;
         }
 
         h2 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 600;
             margin-bottom: 20px;
             color: var(--accent-color);
@@ -62,20 +64,19 @@
         .navbar {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-            transition: transform 0.3s ease;
+            gap: 25px;
+            margin-top: 20px;
         }
 
         .navbar a {
-            padding: 12px 25px;
-            border-radius: 25px;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
             background-color: rgba(255, 255, 255, 0.3);
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: background-color 0.3s, transform 0.3s ease;
+            transition: background-color var(--transition-duration), transform var(--transition-duration) ease;
         }
 
         .navbar a:hover {
@@ -128,7 +129,6 @@
 
         section {
             padding: 100px 20px;
-            transition: padding 0.3s ease;
         }
 
         .section {
@@ -154,47 +154,15 @@
 
         .project-card {
             background: white;
-            padding: 25px;
-            border-radius: 15px;
+            padding: 20px;
+            border-radius: var(--border-radius);
             box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform var(--transition-duration), box-shadow var(--transition-duration);
         }
 
         .project-card:hover {
             transform: translateY(-8px);
             box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 18px;
-            margin-bottom: 20px;
-            font-size: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: #f9f9f9;
-            color: var(--light-text);
-            transition: border 0.3s;
-        }
-
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: var(--primary-color);
-            outline: none;
-        }
-
-        .contact-form button {
-            padding: 12px 30px;
-            font-size: 1.1rem;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background: var(--secondary-color);
         }
 
         footer {
@@ -203,6 +171,46 @@
             background: var(--primary-color);
             color: white;
             margin-top: 30px;
+        }
+
+        /* Weather Styles */
+        #weather {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        #weatherResult {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .hourly-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .hourly-item img {
+            margin-right: 10px;
+        }
+
+        .weather-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .weather-container div {
+            background: var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .weather-container div h3 {
+            margin: 0;
         }
 
         @keyframes fadeIn {
@@ -217,10 +225,10 @@
     <h1>Jahmare Medina</h1>
     <p>Frontend Developer | Passionate About Crafting Experiences</p>
     <nav class="navbar">
-        <a href="#" onclick="showSection('about')">About Me</a>
-        <a href="#" onclick="showSection('skills')">Skills</a>
-        <a href="#" onclick="showSection('projects')">Projects</a>
-        <a href="#" onclick="showSection('contact')">Contact</a>
+        <a href="#" onclick="showSection('about')"><i class="fas fa-user"></i> About Me</a>
+        <a href="#" onclick="showSection('skills')"><i class="fas fa-code"></i> Skills</a>
+        <a href="#" onclick="showSection('projects')"><i class="fas fa-briefcase"></i> Projects</a>
+        <a href="#" onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
 </header>
 
@@ -240,9 +248,9 @@
     <div class="container">
         <h2>Skills</h2>
         <ul>
-            <li>HTML, CSS, JavaScript</li>
-            <li>React.js</li>
-            <li>Responsive Design</li>
+            <li><i class="fas fa-html5"></i> HTML, CSS, JavaScript</li>
+            <li><i class="fab fa-react"></i> React.js</li>
+            <li><i class="fas fa-mobile-alt"></i> Responsive Design</li>
         </ul>
     </div>
 </section>
@@ -255,9 +263,11 @@
                 <h3>Portfolio Website</h3>
                 <p>My personal website showcasing skills and projects.</p>
             </div>
+
             <div class="project-card">
                 <h3>Weather App</h3>
-                <p>A dynamic app fetching live weather data.</p>
+                <p>A dynamic app fetching live weather data from OpenWeather API.</p>
+                <button onclick="showWeatherApp()">View Weather App</button>
             </div>
         </div>
     </div>
@@ -266,7 +276,7 @@
 <section id="contact" class="section">
     <div class="container">
         <h2>Contact Me</h2>
-        <form id="contactForm" action="#" method="POST" class="contact-form">
+        <form id="contactForm" action="#" method="POST">
             <input type="text" placeholder="Your Name" name="name" required>
             <input type="email" placeholder="Your Email" name="email" required>
             <textarea placeholder="Your Message" name="message" rows="4" required></textarea>
@@ -275,11 +285,13 @@
     </div>
 </section>
 
-<section id="share" class="section">
+<section id="weather" class="section">
     <div class="container">
-        <h2>Share My Portfolio</h2>
-        <p>If you'd like to share my portfolio, click the button below:</p>
-        <a href="mailto:?subject=Check out my portfolio!&body=Hi, I wanted to share with you this amazing portfolio. Check it out: https://yourportfolio.com" class="navbar__button">Share via Email</a>
+        <h2>Weather</h2>
+        <input type="text" id="city" placeholder="Enter City" />
+        <button onclick="getWeather()">Get Weather</button>
+        <div id="weatherResult"></div>
+        <div id="hourly-forecast"></div>
     </div>
 </section>
 
@@ -288,31 +300,167 @@
 </footer>
 
 <script>
-    // Show section dynamically
+    // Get weather data
+    function getWeather() {
+        const apiKey = 'b82c4b6d2fdfb867ee7842a212b70db2'; // Your provided API key
+        const city = document.getElementById('city').value;
+
+        if (!city) {
+            alert('Please enter a city');
+            return;
+        }
+
+        const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+        const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+
+        fetch(currentWeatherUrl)
+            .then(response => response.json())
+            .then(data => {
+                displayWeather(data);
+            })
+            .catch(error => {
+                console.error('Error fetching current weather data:', error);
+                alert('Error fetching current weather data. Please try again.');
+            });
+
+        fetch(forecastUrl)
+            .then(response => response.json())
+            .then(data => {
+                displayHourlyForecast(data.list);
+            })
+            .catch(error => {
+                console.error('Error fetching hourly forecast data:', error);
+                alert('Error fetching hourly forecast data. Please try again.');
+            });
+    }
+
+    function displayWeather(data) {
+        const weatherInfoDiv = document.getElementById('weatherResult');
+        
+        if (data.cod === '404') {
+            weatherInfoDiv.innerHTML = `<p>City not found. Please try again.</p>`;
+        } else {
+            const cityName = data.name;
+            const temperature = Math.round(data.main.temp - 273.15); // Convert to Celsius
+            const description = data.weather[0].description;
+            const iconCode = data.weather[0].icon;
+            const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+            weatherInfoDiv.innerHTML = `                
+                <h3>Weather in ${cityName}</h3>
+                <div class="weather-container">
+                    <div>
+                        <h3>${temperature}°C</h3>
+                        <p>${description}</p>
+                    </div>
+                    <div>
+                        <img src="${iconUrl}" alt="weather icon" />
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    function displayHourlyForecast(forecastList) {
+        const hourlyForecastDiv = document.getElementById('hourly-forecast');
+        hourlyForecastDiv.innerHTML = '<h4>Hourly Forecast:</h4>';
+
+        forecastList.slice(0, 8).forEach(item => {
+            const time = new Date(item.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const temp = Math.round(item.main.temp - 273.15); // Convert to Celsius
+            const description = item.weather[0].description;
+            const iconCode = item.weather[0].icon;
+            const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+            hourlyForecastDiv.innerHTML += `
+                <div class="hourly-item">
+                    <img src="${iconUrl}" alt="weather icon" />
+                    <p>${time} - ${temp}°C, ${description}</p>
+                </div>
+            `;
+        });
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle('dark-theme');
+    }
+
     function showSection(sectionId) {
-        document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
         document.getElementById(sectionId).classList.add('active');
     }
-
-    // Toggle between light and dark themes
-    function toggleTheme() {
-        const currentTheme = document.body.style.backgroundColor;
-        document.body.style.backgroundColor = currentTheme === 'var(--light-bg)' ? 'var(--dark-bg)' : 'var(--light-bg)';
-        document.body.style.color = currentTheme === 'var(--light-bg)' ? 'var(--dark-text)' : 'var(--light-text)';
+    
+    function showWeatherApp() {
+        showSection('weather');
     }
-
-    // Form submit with AJAX (could be extended to use Flask for backend)
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = new FormData(this);
-        fetch('/submit-form', {
-            method: 'POST',
-            body: formData
-        }).then(response => response.json())
-          .then(data => alert('Message sent!'))
-          .catch(error => alert('Error sending message.'));
-    });
 </script>
 
 </body>
 </html>
+<style>
+    /* Dark Theme Styles */
+    :root {
+        --primary-color: #333333; /* Darker primary color */
+        --secondary-color: #444444; /* Darker secondary color */
+        --accent-color: #008C61; /* Muted green for accents */
+        --dark-bg: #181818; /* Dark background for the dark theme */
+        --dark-text: #f0f0f0; /* Light text for dark theme */
+        --light-bg: #2C2C2C; /* Darker light background */
+        --light-text: #dcdcdc; /* Light text */
+        --border-radius: 8px;
+        --transition-duration: 0.3s;
+    }
+
+    body.dark-theme {
+        background-color: var(--dark-bg);
+        color: var(--dark-text);
+    }
+
+    body.dark-theme header {
+        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    }
+
+    body.dark-theme .navbar a {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    body.dark-theme .navbar a:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+    }
+
+    body.dark-theme footer {
+        background: var(--secondary-color);
+    }
+
+    .toggle-switch input:checked + label {
+        background: var(--accent-color);
+    }
+
+    /* Additional adjustments to darken text and backgrounds */
+    body {
+        background-color: var(--light-bg);
+        color: var(--light-text);
+    }
+
+    header {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar a {
+        color: var(--dark-text);
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    footer {
+        background: var(--primary-color);
+    }
+
+    .hourly-item img {
+        filter: brightness(0.8);
+    }
+</style>
